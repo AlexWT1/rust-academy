@@ -1,0 +1,18 @@
+[package]
+name = "rust-academy"
+version = "1.0.0"
+edition = "2021"
+description = "Интерактивная платформа для изучения Rust: от основ до продвинутых тем"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net"] }
+# SQLite компилируется внутрь бинарника (bundled) — на сервере не нужна системная библиотека
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+sha2 = "0.10"
+hex = "0.4"
+rand = "0.8"
+
+[profile.release]
+lto = true
