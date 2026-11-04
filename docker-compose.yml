@@ -1,0 +1,14 @@
+services:
+  rust-academy:
+    build: .
+    container_name: rust-academy
+    restart: unless-stopped
+    ports:
+      - "8011:8011"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8011
+      - RA_DB=/app/data/rust-academy.db
+      - RA_ADMIN_PASSWORD=change_me_super_secret # Пароль для admin при первом запуске
+    volumes:
+      - ./data:/app/data

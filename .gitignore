@@ -3,4 +3,5 @@ tasks.json
 *.db
 *.db-wal
 *.db-shm
+data/
 deploy.md
